@@ -14,18 +14,18 @@ jobs:
       run: dotnet tool install -g dotnetCampus.SendEmailTask
 
     - name: Download File
-      run: DownloadFile -u http://d3.jnqcjy.ltd:806/1408/DiskGenius_x86_bkill.com.zip -o file.zip
+      run: DownloadFile -u https://public.dm.files.1drv.com/y4mgoEyGh2oKF-MX2-D8S785RAb5eQY8dL4bCObX73IZHkKdsFGq7RBO-Miib456LswUvpxR3eCGgxfCvDJ4VBXx8ar4GWcMFznC5ltyURV041O4Xg2unIsmgRvROuoksXX98rSFz2PcOy9lv-4sdH55rJiEPZoSvX1wiQsGUlZQiFFAbpteJLXBqe5ge330_ULruLG2a_3p1yhvLfhuBYCcFkNlVzw-R-1CXXlGvLnG6w?access_token=EwAQA61DBAAU2kADSankulnKv2PwDjfenppNXFIAAdiFb67NnxhqwTw%2bplPoZ8xPKbdoqsFQ%2bnOlMxV/WUoCeTxmDkkyKo8FO8kB1d9vnpxOboCyOvMOQ5ONQq1uuAaq8RVJePrsqadjiuZtcahYW8JSRbxYtT9K6iE8X6Uqah%2biaJ5rvP/xSJKnqdgrH9n9hImHPeUGifGMDarT7UuLsisuPhuywem7lkkFivVrnymGsiNC2KkDa/lt7gJfkuHe4fGVBqQVmd5A/A%2bCwjTKUjCaVGIdELkM/sQM4xpAZZxTsSB6If/N0LoKsSPuMM77KsYpwoVQehAFwDhwavXOH5OPkjVRSS6XIZ2Pd369P2UhPs7Ocdrg7I5ALsRpxqIDZgAACAPaHw39DitU4AHAhZuP%2bKBM7O3iWIdeROyO3zDcrNLg2p8vjX5v9ZYzzzcbozDeZvXgG7pA7aCRs2RegqFp3xiuZceQTbE/nx7cSklCE5g9KUcERrIx9zNqz1yNwIA2K83CgOas7NvHCZHrRv8hu/ja4rOooKQWzhQc/TGGef9fIpNQ9BIs3jwILjvhczBrSRq5ySk1xtD1fU6aXq78sNFA/Jyf3kmyiZJjQSW84YN/Y15SxF0rJxd2BEPL01qlcWpDAwNezG1696DyAfvTtrGJu2WDRFg7yL4YP/FaPgP/MQARvceYjpuNddjJXz8Bg4KMwK3YILdG5ZgPDoe82ht5OtW1f7fufRQLG3KYshL9IZIeQkd148xixLSz%2b1/AFbMPyJ8nJRHkc/itp6n7kbNRSEP8YeJrzl/Ot8rEjz1FMwdHXo4lN%2bVBBiU0%2bBuAmnWOb69OLTnohcN1cWNppoPHQiaTgXmFMyLrZZw2KPKfnQkVGQg332vNWogWCP0rWaIrzfe21hhyar13W9uhQ9iZX8PSH9lzDQXWiRoQYfcVxb0StauG7L5dQWGN%2bVmK2IYylwGEykTLzukl1reSl5aq6Y2NVF4w5YV/4fyryt9SayA0SNLLfE5DFUkuquKfL8CE4iduYu3mTx4GAg%3d%3d -o file.zip
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
       with :
-       server_address :  smtp.qq.com
+       server_address :  smtp.aliyun.com	
        server_port : 465 
        username : ${{secrets.LOGINMAILUSER}} 
        password : ${{secrets.LOGINMAILPWD}} 
-       subject : Github Actions job result 
-       to : 470138890@qq.com
-       from : Luke Skywalker
-       body : 完成
+       subject : Github Actions 下载文件
+       to : ${{secrets.MYRECEIVEEMAIL}} 
+       from : B
+       body : 下载完成
        attachments: file.zip
    
  
