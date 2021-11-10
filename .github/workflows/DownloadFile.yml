@@ -23,7 +23,7 @@ jobs:
        username : ${{secrets.LOGINMAILUSER}} 
        password : ${{secrets.LOGINMAILPWD}} 
        subject : Github Actions job result 
-       to : 470138890@qq.com
+       to : ${{secrets.TO}} 
        from : Luke Skywalker
        body : 完成
        attachments: file.zip
